@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { motion } from "framer-motion";
 import {
@@ -77,6 +78,8 @@ export function AnalyticsClient() {
       caseTrend: SAMPLE_TREND,
       referralTrend: SAMPLE_TREND.map((d) => ({ ...d, value: Math.floor(d.value * 0.6) })),
       casesByStatus: SAMPLE_STATUS,
+      quarter: selectedQuarter,
+      year: selectedYear === "all" ? new Date().getFullYear() : parseInt(selectedYear),
     },
   });
 
